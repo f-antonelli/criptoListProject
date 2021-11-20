@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+@import "settings/mixins";
+@import "settings/color";
+@import "settings/keyframes";
+@import "settings/darkMode";
+@import "responsive/mediaQ.scss";
+@import "components/navBar";
+@import "components/bodyTable.scss";
+@import "components/footer";
+@import "settings/modals";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+}

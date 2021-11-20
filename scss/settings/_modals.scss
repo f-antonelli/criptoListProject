@@ -1,0 +1,69 @@
+.container-modal{
+    @include containerModals();
+    .close-btn{
+        color: #ccc;
+        float: right;  
+        font-size: 30px;
+        &:hover, &:focus{
+            color: black;
+        }
+    }
+    p{
+        padding-top: 12px;
+    }
+    .modal-addportfolio{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 20% auto;
+        padding: 20px;
+        width: 300px;
+        background: white;
+        animation: modalAddPortfolio .5s;
+        .addCripto{
+            @include btnDecentr(4px 8px);
+        }
+        .input-style{
+            padding: 5px;
+            outline: none;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.container-modal{
+    @include containerModals();
+    .close-btn{
+        color: #ccc;
+        float: right;  
+        font-size: 30px;
+        &:hover, &:focus{
+            color: black;
+        }
+    }
+    p{
+        padding-top: 12px;
+    }
+    .modal-buyinportfolio{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 20% auto;
+        padding: 20px;
+        width: 300px;
+        background: white;
+        animation: modalAddPortfolio .5s;
+        .addCripto{
+            @include btnDecentr(4px 8px);
+        }
+        .input-style{
+            padding: 5px;
+            outline: none;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}

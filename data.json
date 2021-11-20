@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "nombre": "btc",
+        "precio": 61239.23,
+        "cap": 1191833351377
+    },
+    {
+        "id": 2,
+        "nombre": "matic",
+        "precio": 1.97,
+        "cap": 13357645115
+
+    },
+    {
+        "id": 3,
+        "nombre": "luna",
+        "precio": 0.10,
+        "cap": 7631871099
+
+    },
+    {
+        "id": 4,
+        "nombre": "theta",
+        "precio": 4353,
+        "cap": 7631871099
+    },
+    {
+        "id": 5,
+        "nombre": "mana",
+        "precio": 3,
+        "cap": 213214099
+    },
+    {
+        "id": 6,
+        "nombre": "chz",
+        "precio": 0.5,
+        "cap": 7632399
+    },
+    {
+        "id": 7,
+        "nombre": "woop",
+        "precio": 0.19,
+        "cap": 213214099
+    },
+    {
+        "id": 8,
+        "nombre": "mana",
+        "precio": 3,
+        "cap": 81989471
+    },
+    {
+        "id": 9,
+        "nombre": "bolt",
+        "precio": 11.39,
+        "cap": 20000
+    },
+    {
+        "id": 10,
+        "nombre": "eth",
+        "precio": 4444.1,
+        "cap": 16775298235
+    },
+    {
+        "id": 11,
+        "nombre": "sol",
+        "precio": 220,
+        "cap": 1976682902
+    },
+    {
+        "id": 12,
+        "nombre": "dot",
+        "precio": 41.78,
+        "cap": 950444091
+    },
+    {
+        "id": 13,
+        "nombre": "xrp",
+        "precio": 1.10,
+        "cap": 2926224341
+    }
+]

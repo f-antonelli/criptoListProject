@@ -1,0 +1,23 @@
+@mixin containerModals(){
+    display: none;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+@mixin btnDecentr($pad) {
+    background: $serenity;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    padding: $pad;
+    margin: 5px;
+    &:hover{
+        background: $serenity-2;
+    }
+}

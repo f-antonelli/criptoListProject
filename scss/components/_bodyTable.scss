@@ -1,0 +1,21 @@
+.container-table{
+    margin: 100px 30px 40px 30px;
+    //overflow-x: scroll;
+    .btn-add{
+        @include btnDecentr(0 8px);
+    }
+    .btn-buy{
+        @include btnDecentr(2px 8px);
+        background: $light-green;
+        &:hover{
+            background: $sea-green;
+        }
+    }
+    .btn-sell{
+        @include btnDecentr(2px 8px);
+        background: $indian-red;
+        &:hover{
+            background: $fire-brick;
+        }
+    }
+}

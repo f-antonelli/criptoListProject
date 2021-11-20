@@ -1,0 +1,14 @@
+@keyframes modalAddPortfolio {
+    from {
+        top: -600px;
+        left: 0;
+        right: 0;
+    }
+    to{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 20% auto;
+    }
+}
