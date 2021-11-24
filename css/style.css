@@ -32,7 +32,7 @@
       body .container-nav .container-brand a {
         color: white; }
       body .container-nav .dark-theme .container-login #logIn button {
-        color: white !important; }
+        color: white; }
     body .container-table .table {
       color: white; }
     body .container-modallogin .form-login {
@@ -115,8 +115,7 @@
         background: none;
         border: 1px solid #2c6c87;
         padding: 5px;
-        border-radius: 20px;
-        color: black; }
+        border-radius: 20px; }
 
 .container-table {
   margin: 100px 30px 40px 30px; }
