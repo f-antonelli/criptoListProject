@@ -19,6 +19,82 @@ const fetchData = async () => {
     }
 };
 
+//  Boton dark mode
+const btnDark = d.getElementById('btn-dark');
+const dataDark = d.querySelectorAll('[data-dark]');
+
+//  Dark mode segun configuracion de sistema del usuario
+const configUser = window.matchMedia('(prefers-color-scheme: dark)');
+let children = btnDark.children[0];  // Sol y Luna
+    if (configUser.matches){
+        children.classList.remove('fa-moon');
+        children.classList.add('fa-sun');
+
+        btnDark.classList.remove('text-black');
+        btnDark.classList.add('text-white');
+    }
+
+//  LocalStorage color theme
+const localConfig = localStorage.getItem('theme');
+
+if (localConfig === 'dark'){
+        children.classList.remove('fa-moon');
+        children.classList.add('fa-sun');
+
+        btnDark.classList.remove('text-black');
+        btnDark.classList.add('text-white');
+
+        dataDark.forEach(e => {
+            e.classList.add('dark-mode');
+            e.classList.remove('light-mode');
+        });
+} else if (localConfig === 'light'){
+        children.classList.remove('fa-sun');
+        children.classList.add('fa-moon');
+
+        btnDark.classList.add('text-black');
+        btnDark.classList.remove('text-white');
+    
+        dataDark.forEach(e => {
+            e.classList.add('light-mode');
+            e.classList.remove('dark-mode');
+        });
+}
+
+btnDark.addEventListener('click', e => {
+    let colorTheme;
+
+    if (children.classList.value == "fas fa-moon"){
+        children.classList.remove('fa-moon');
+        children.classList.add('fa-sun');
+
+        btnDark.classList.remove('text-black');
+        btnDark.classList.add('text-white');
+
+        dataDark.forEach(e => {
+            e.classList.add('dark-mode');
+            e.classList.remove('light-mode');
+        });
+
+        colorTheme = d.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', colorTheme);
+    } else {
+        children.classList.remove('fa-sun');
+        children.classList.add('fa-moon');
+
+        btnDark.classList.add('text-black');
+        btnDark.classList.remove('text-white');
+    
+        dataDark.forEach(e => {
+            e.classList.add('light-mode');
+            e.classList.remove('dark-mode');
+        });
+        
+        colorTheme = d.body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', colorTheme);
+    }
+});
+
 //  Cargando criptos al HTML
 const containerCriptos = d.getElementById('containerCriptos');
 
@@ -162,15 +238,10 @@ function printLocalStorage(string){
 
     if (printCriptosInLocalStorage.length !== 0) {
 
-        let arrayCripto = printCriptosInLocalStorage[printCriptosInLocalStorage.length-1]
-        console.log(arrayCripto);
-        //console.log(Object.values(arrayCripto)[0])
+        let arrayCripto = printCriptosInLocalStorage[printCriptosInLocalStorage.length-1];
+
         portfolio = arrayCripto;
-        //portfolio = {...Object.values(arrayCripto)}
-        // Object.values(arrayCripto).forEach(element => {
-        //     portfolio = { ...element };
-        // });
-        console.log(portfolio);
+
         const template = d.getElementById('templatePortfolio').content;
         const fragment = new DocumentFragment();
     
@@ -184,7 +255,8 @@ function printLocalStorage(string){
             const clone = template.cloneNode(true); 
             fragment.appendChild(clone);
         });
-        console.log(containerPortfolio.appendChild(fragment));
+        containerPortfolio.appendChild(fragment);
+
         //  Borrar contenido del footer cuando hay elementos
         if (Object.keys(portfolio).length === 0){ // Uso Object.keys para que sea un array y poder conocer su longitud
             footer.innerHTML = `

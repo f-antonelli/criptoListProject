@@ -13,7 +13,26 @@
 
 .dark-mode {
   background: #010b13 !important;
-  color: white; }
+  color: white !important; }
+
+.light-mode {
+  background: white !important;
+  color: black !important; }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #010b13;
+    color: white; }
+    body .container-footer {
+      background: #010b13; }
+    body .container-nav {
+      background: #010b13; }
+      body .container-nav .container-brand .logo a {
+        color: white; }
+      body .container-nav .container-brand a {
+        color: white; }
+    body .container-table .table {
+      color: white; } }
 
 @media (max-width: 780px) {
   .container-footer .container-textfooter {
@@ -35,6 +54,7 @@
       flex-direction: row; } }
 
 .container-nav {
+  z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;

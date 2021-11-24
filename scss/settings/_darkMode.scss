@@ -1,4 +1,38 @@
 .dark-mode{
     background: $black-knight !important;
-    color: white;
+    color: white !important;
+}
+
+.light-mode{
+    background: white !important;
+    color: black !important;
+}
+
+//  En caso de tener configurado dark en tu PC
+@media (prefers-color-scheme: dark) {
+    body{
+        background: $black-knight;
+        color: white;
+        .container-footer{
+            background: $black-knight;
+        }
+        .container-nav{
+            background: $black-knight;
+            .container-brand{
+                .logo{
+                    a{
+                        color: white; 
+                    }
+                }
+                a{
+                    color: white; 
+                }
+            }
+        }
+        .container-table{
+            .table{
+                color: white;
+            }
+        }
+    }
 }
