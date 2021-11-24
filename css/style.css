@@ -31,8 +31,16 @@
         color: white; }
       body .container-nav .container-brand a {
         color: white; }
+      body .container-nav .dark-theme .container-login #logIn button {
+        color: white !important; }
     body .container-table .table {
-      color: white; } }
+      color: white; }
+    body .container-modallogin .form-login {
+      background: #010b13;
+      color: white; }
+      body .container-modallogin .form-login input {
+        background: #010b13;
+        color: white; } }
 
 @media (max-width: 780px) {
   .container-footer .container-textfooter {
@@ -90,7 +98,25 @@
       .container-nav .container-brand h4:hover {
         color: #2c6c87; }
   .container-nav .dark-theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0 30px; }
+    .container-nav .dark-theme .container-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px 0 0; }
+      .container-nav .dark-theme .container-login p {
+        margin: 0; }
+      .container-nav .dark-theme .container-login button {
+        width: 100px;
+        outline: none;
+        background: none;
+        border: 1px solid #2c6c87;
+        padding: 5px;
+        border-radius: 20px;
+        color: black; }
 
 .container-table {
   margin: 100px 30px 40px 30px; }
@@ -98,7 +124,6 @@
     background: #2c6c87;
     outline: none;
     border: none;
-    border-radius: 8px;
     font-size: 18px;
     padding: 0 8px;
     margin: 5px; }
@@ -108,7 +133,6 @@
     background: #2c6c87;
     outline: none;
     border: none;
-    border-radius: 8px;
     font-size: 18px;
     padding: 2px 8px;
     margin: 5px;
@@ -121,7 +145,6 @@
     background: #2c6c87;
     outline: none;
     border: none;
-    border-radius: 8px;
     font-size: 18px;
     padding: 2px 8px;
     margin: 5px;
@@ -174,7 +197,7 @@
           color: white;
           text-decoration: none; }
 
-.container-modal {
+.container-modallogin {
   display: none;
   z-index: 1;
   position: fixed;
@@ -183,82 +206,47 @@
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.5); }
-  .container-modal .close-btn {
+  .container-modallogin .close-btn {
     color: #ccc;
     float: right;
     font-size: 30px; }
-    .container-modal .close-btn:hover, .container-modal .close-btn:focus {
+    .container-modallogin .close-btn:hover, .container-modallogin .close-btn:focus {
       color: black; }
-  .container-modal p {
-    padding-top: 12px; }
-  .container-modal .modal-addportfolio {
+  .container-modallogin .form-login {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-    margin: 20% auto;
-    padding: 20px;
+    margin: 87px 5px 0 0;
+    padding: 10px;
     width: 300px;
     background: white;
-    animation: modalAddPortfolio .5s; }
-    .container-modal .modal-addportfolio .addCripto {
-      background: #2c6c87;
-      outline: none;
-      border: none;
-      border-radius: 8px;
+    border-radius: 5px; }
+    .container-modallogin .form-login p {
       font-size: 18px;
-      padding: 4px 8px;
-      margin: 5px; }
-      .container-modal .modal-addportfolio .addCripto:hover {
-        background: #235a71; }
-    .container-modal .modal-addportfolio .input-style {
-      padding: 5px;
-      outline: none;
+      margin: 0;
+      padding-top: 12px; }
+    .container-modallogin .form-login hr {
+      margin: 0 0 10px 0; }
+    .container-modallogin .form-login input {
       width: 100%;
-      margin-bottom: 10px; }
-
-.container-modal {
-  display: none;
-  z-index: 1;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5); }
-  .container-modal .close-btn {
-    color: #ccc;
-    float: right;
-    font-size: 30px; }
-    .container-modal .close-btn:hover, .container-modal .close-btn:focus {
-      color: black; }
-  .container-modal p {
-    padding-top: 12px; }
-  .container-modal .modal-buyinportfolio {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 20% auto;
-    padding: 20px;
-    width: 300px;
-    background: white;
-    animation: modalAddPortfolio .5s; }
-    .container-modal .modal-buyinportfolio .addCripto {
-      background: #2c6c87;
-      outline: none;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      padding: 4px 8px;
-      margin: 5px; }
-      .container-modal .modal-buyinportfolio .addCripto:hover {
-        background: #235a71; }
-    .container-modal .modal-buyinportfolio .input-style {
       padding: 5px;
+      margin: 5px 0;
       outline: none;
-      width: 100%;
-      margin-bottom: 10px; }
+      border: 1px solid black; }
+    .container-modallogin .form-login .container-submit {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .container-modallogin .form-login .container-submit input[type="submit"] {
+        background: #2c6c87;
+        outline: none;
+        border: none;
+        font-size: 18px;
+        padding: 3px;
+        margin: 5px;
+        width: 40%; }
+        .container-modallogin .form-login .container-submit input[type="submit"]:hover {
+          background: #235a71; }
 
 * {
   padding: 0;

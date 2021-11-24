@@ -28,11 +28,32 @@
                     color: white; 
                 }
             }
+            .dark-theme{
+                .container-login{
+                    #logIn{
+                        button{
+                            color: white !important;
+                        }
+                    }
+                    
+                }
+            }
         }
         .container-table{
             .table{
                 color: white;
             }
         }
+        .container-modallogin{
+            .form-login{
+                background: $black-knight;
+                color: white;
+                input{
+                    background: $black-knight;
+                    color: white;
+                }
+            }
+        }
     }
 }
+

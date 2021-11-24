@@ -114,6 +114,54 @@ const printCriptos = (data) => {
     containerCriptos.appendChild(fragment); //  Agrego al DOM toda la estructura generada de una
 }
 
+//  Agregando log in
+const btnLogIn = d.getElementById('logIn');
+const modalLogIn = d.getElementsByClassName('container-modallogin')[0];
+const formSubmit = d.getElementById('form');
+const msgLogIn = d.getElementById('message-login');
+const nameText = d.getElementById('name');
+
+//  LocalStorage log in
+const userConfig = localStorage.getItem('user');
+
+if (userConfig !== null){
+    modalLogIn.style.display = "none";
+    btnLogIn.style.display = "none";
+
+    msgLogIn.innerHTML = userConfig;
+    }
+
+btnLogIn.addEventListener('click', () => {
+    modalLogIn.style.display = "flex";
+
+});
+
+formSubmit.addEventListener('submit', e => {
+    e.preventDefault();
+
+    modalLogIn.style.display = "none";
+    btnLogIn.style.display = "none";
+    msgLogIn.innerHTML += `Bienvenido, ${nameText.value}`;
+
+    localStorage.setItem('user', msgLogIn.innerHTML);
+});
+
+//  Modal | Boton de cierre
+let btnClose = d.getElementsByClassName("close-btn")[0];
+
+const closeBtn = () => {
+    modalLogIn.style.display = "none";
+}
+
+const outsideClick = (e) => {
+    if (e.target == modalLogIn) {
+        modalLogIn.style.display = "none";
+    }
+}
+
+btnClose.addEventListener("click", closeBtn);
+window.addEventListener("click", outsideClick);
+
 //  Almacenar criptos en Portfolio
 let portfolio = {};
 

@@ -18,15 +18,33 @@
                 <a href="#"><img class="logo-img" src="./images/logo/logo.png" alt="logo"></a>
                 <a href="./index.html"><h3 data-dark>Decentr</h3></a>
             </div>
-            <a href="./pages/portfolio.html"><h4 data-dark>Portolio</h4></a>
+            <!-- <a href="./pages/portfolio.html"><h4 data-dark>Portolio</h4></a> -->
         </div>
 
         <div class="dark-theme" data-dark>
+            <div class="container-login" data-dark>
+                <p id="message-login"></p>
+                <div id="logIn">
+                    <button data-dark>Log In</button>
+                </div>
+            </div>
             <button id="btn-dark" class="border-0 p-0 text-2xs bg-transparent text-black" type="button">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
     </nav>
+
+    <!--Modal log in-->
+    <div class="container-modallogin">
+        <form id="form" class="form-login" data-dark>
+            <span class="close-btn">&times;</span>
+            <p>Log in</p>
+            <input type="text" id="name" placeholder="Ingrese nombre de usuario" data-dark>
+            <div class="container-submit">
+                <input type="submit" id="submit-login" value="Enviar">
+            </div>
+        </form>
+    </div>
 
     <!--Tabla principal criptos-->
     <section class="container-table">

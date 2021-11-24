@@ -43,6 +43,27 @@
         }
     }
     .dark-theme{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0 30px;
+        .container-login{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px 0 0;
+            p{
+                margin: 0;
+            }
+            button{
+                width: 100px;
+                outline: none;
+                background: none;
+                border: 1px solid $serenity;
+                padding: 5px;
+                border-radius: 20px;
+                color: black;
+            }
+        }
     }
 }

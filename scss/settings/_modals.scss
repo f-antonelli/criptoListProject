@@ -1,4 +1,4 @@
-.container-modal{
+.container-modallogin{
     @include containerModals();
     .close-btn{
         color: #ccc;
@@ -8,62 +8,108 @@
             color: black;
         }
     }
-    p{
-        padding-top: 12px;
-    }
-    .modal-addportfolio{
+    .form-login{
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
-        margin: 20% auto;
-        padding: 20px;
+        margin: 87px 5px 0 0;
+        padding: 10px;
         width: 300px;
         background: white;
-        animation: modalAddPortfolio .5s;
-        .addCripto{
-            @include btnDecentr(4px 8px);
+        border-radius: 5px;
+        p{
+            font-size: 18px;
+            margin: 0;
+            padding-top: 12px;
         }
-        .input-style{
-            padding: 5px;
-            outline: none;
+        hr{
+            margin: 0 0 10px 0;
+        }
+        input{
             width: 100%;
-            margin-bottom: 10px;
+            padding: 5px;
+            margin: 5px 0;
+            outline: none;
+            border: 1px solid black;
+        }
+        .container-submit{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input[type="submit"]{
+                @include btnDecentr(3px);
+                width: 40%;
+            }
         }
     }
 }
 
-.container-modal{
-    @include containerModals();
-    .close-btn{
-        color: #ccc;
-        float: right;  
-        font-size: 30px;
-        &:hover, &:focus{
-            color: black;
-        }
-    }
-    p{
-        padding-top: 12px;
-    }
-    .modal-buyinportfolio{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 20% auto;
-        padding: 20px;
-        width: 300px;
-        background: white;
-        animation: modalAddPortfolio .5s;
-        .addCripto{
-            @include btnDecentr(4px 8px);
-        }
-        .input-style{
-            padding: 5px;
-            outline: none;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-    }
-}
+// .container-modal{
+//     @include containerModals();
+//     .close-btn{
+//         color: #ccc;
+//         float: right;  
+//         font-size: 30px;
+//         &:hover, &:focus{
+//             color: black;
+//         }
+//     }
+//     p{
+//         padding-top: 12px;
+//     }
+//     .modal-addportfolio{
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         right: 0;
+//         margin: 20% auto;
+//         padding: 20px;
+//         width: 300px;
+//         background: white;
+//         animation: modalAddPortfolio .5s;
+//         .addCripto{
+//             @include btnDecentr(4px 8px);
+//         }
+//         .input-style{
+//             padding: 5px;
+//             outline: none;
+//             width: 100%;
+//             margin-bottom: 10px;
+//         }
+//     }
+// }
+
+// .container-modal{
+//     @include containerModals();
+//     .close-btn{
+//         color: #ccc;
+//         float: right;  
+//         font-size: 30px;
+//         &:hover, &:focus{
+//             color: black;
+//         }
+//     }
+//     p{
+//         padding-top: 12px;
+//     }
+//     .modal-buyinportfolio{
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         right: 0;
+//         margin: 20% auto;
+//         padding: 20px;
+//         width: 300px;
+//         background: white;
+//         animation: modalAddPortfolio .5s;
+//         .addCripto{
+//             @include btnDecentr(4px 8px);
+//         }
+//         .input-style{
+//             padding: 5px;
+//             outline: none;
+//             width: 100%;
+//             margin-bottom: 10px;
+//         }
+//     }
+// }
