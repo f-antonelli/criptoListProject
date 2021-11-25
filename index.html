@@ -115,10 +115,47 @@
             </form>
         </div>
 
+        <!--Modal | Cripto existente-->
         <div class="container-criptoexist" id="criptoExist" data-dark>
             <span class="close-btn">&times;</span>
             <p>La cripto ya existe en el portfolio.
             </p>
+        </div>
+
+        <!--Modal | Comprar cripto-->
+        <div class="container-modalbuy">
+            <form id="formBuy" class="form-buy" data-dark>
+                <span class="close-btn">&times;</span>
+                <p>Cuanto deseas comprar?</p>
+                <input data-dark
+                type="text" 
+                id="cantBuy" 
+                placeholder="Ingrese la cantidad" 
+                pattern="\d*" 
+                title="Por favor ingrese un numero"
+                requiered>
+                <div class="container-submit">
+                    <input type="submit" id="submitBuy" value="Comprar">
+                </div>
+            </form>
+        </div>
+
+        <!--Modal | Vender cripto-->
+        <div class="container-modalsell">
+            <form id="formSell" class="form-sell" data-dark>
+                <span class="close-btn">&times;</span>
+                <p>Cuanto deseas vender?</p>
+                <input data-dark
+                type="text" 
+                id="cantSell" 
+                placeholder="Ingrese la cantidad" 
+                pattern="\d*" 
+                title="Por favor ingrese un numero"
+                requiered>
+                <div class="container-submit">
+                    <input type="submit" id="submitSell" value="Vender">
+                </div>
+            </form>
         </div>
 
         <!--Template | Tabla principal criptos-->

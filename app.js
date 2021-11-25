@@ -144,25 +144,8 @@ formSubmit.addEventListener('submit', e => {
     msgLogIn.innerHTML += `Bienvenidx, ${nameText.value}`;
 
     localStorage.setItem('user', msgLogIn.innerHTML);
+    formSubmit.reset(); // Limpiar inputs una vez ingresados
 });
-
-//  Modal | Boton de cierre
-let btnClose = d.getElementsByClassName("close-btn")[0];
-
-const closeBtn = () => {
-    modalLogIn.style.display = "none";
-    criptoExist.style.display = "none";
-}
-
-const outsideClick = (e) => {
-    if (e.target == modalLogIn) {
-        modalLogIn.style.display = "none";
-    }
-}
-
-btnClose.addEventListener('click', closeBtn);
-
-window.addEventListener('click', outsideClick);
 
 //  Almacenar criptos en Portfolio
 let portfolio = {};
@@ -179,14 +162,13 @@ const takeButtons = (data) => {
             cripto.cantidad = 0; // Agrego atributo cantidad
             cripto.total = 0; // Agrego atributo total
 
-
             if (portfolio.hasOwnProperty(cripto.id)){
                 criptoExist.style.display = "block";
                 criptoExist.addEventListener('click', closeBtn);
                 setTimeout(() => {criptoExist.style.display = "none"}, 2000);
             } else {
                 portfolio[cripto.id] = { ...cripto } // spread operator para empujar todo el contenido del objeto
-                console.log(portfolio)
+
                 saveCriptoInLocalStorage("criptos", portfolio);
                 printInPortfolio();
             }
@@ -230,39 +212,77 @@ const printInPortfolio = () => {
 }
 
 //  Botones 'Comprar' / 'Vender' del Portfolio
+const modalBuy = d.getElementsByClassName('container-modalbuy')[0],
+modalSell = d.getElementsByClassName('container-modalsell')[0];
+
 const portfolioButtons = () => {
     const addButton = d.querySelectorAll('#containerPortfolio .btn-buy');
     const delButton = d.querySelectorAll('#containerPortfolio .btn-sell');
+    const sendFormBuy = d.getElementById('formBuy');
+    const sendFormSell = d.getElementById('formSell');
+    const cantInputBuy = d.getElementById('cantBuy');
+    const cantInputSell = d.getElementById('cantSell');
+    
 
     addButton.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const cripto = portfolio[btn.dataset.id];
-            cripto.total = (cripto.cantidad * cripto.precio).toFixed(2);
-            cripto.cantidad++;
-            portfolio[btn.dataset.id] = {...cripto};
-            localStorage.removeItem('criptos');
-            saveCriptoInLocalStorage("criptos", portfolio);
-            printInPortfolio();
+        btn.addEventListener('click', (e) => {
+            modalBuy.style.display = "flex";
+            let cripto = portfolio[btn.dataset.id];
+
+            //  Enviar cantidad al portfolio
+            sendFormBuy.addEventListener('submit', e => {
+                e.preventDefault();
+                while(cripto !== undefined) {
+                    cripto.cantidad += parseInt(cantInputBuy.value);
+                    cripto.total = (cripto.cantidad * cripto.precio).toFixed(2);
+    
+                    portfolio[btn.dataset.id] = {...cripto};
+                    localStorage.removeItem('criptos');
+                    saveCriptoInLocalStorage("criptos", portfolio);
+                    printInPortfolio();
+                    
+                    modalBuy.style.display = "none";
+                    cripto = undefined;
+                    cantInputBuy.value = '';
+                }
+            });
         });
     });
 
     delButton.forEach(btn => {
         btn.addEventListener('click', () => {
-            const cripto = portfolio[btn.dataset.id];
-            cripto.total = (cripto.cantidad * cripto.precio).toFixed(2);
-            cripto.cantidad--;
-            localStorage.removeItem('criptos');
-            saveCriptoInLocalStorage("criptos", portfolio);
+            modalSell.style.display = "flex";
+            let cripto = portfolio[btn.dataset.id];
+
             if (cripto.cantidad === 0 || cripto.cantidad < 0){
-                //deleteFromLocalStorage(portfolio[btn.dataset.id]);
-                //console.log(portfolio[btn.dataset.id]);
                 localStorage.removeItem('criptos');
                 delete portfolio[btn.dataset.id]; // delete solo se usa con objetos
                 saveCriptoInLocalStorage("criptos", portfolio);
             } else {
                 portfolio[btn.dataset.id] = {...cripto};
             }
-            printInPortfolio();
+
+            sendFormSell.addEventListener('submit', e => {
+                console.log(cantInputSell.value)
+                e.preventDefault();
+                while(cripto !== undefined) {
+                    cripto.cantidad -= parseInt(cantInputSell.value);
+                    cripto.total = (cripto.cantidad * cripto.precio).toFixed(2);
+
+                    if (cripto.cantidad === 0 || cripto.cantidad < 0){
+                        delete portfolio[btn.dataset.id]; // delete solo se usa con objetos
+                    } else {
+                        portfolio[btn.dataset.id] = {...cripto};
+                    }
+
+                    localStorage.removeItem('criptos');
+                    saveCriptoInLocalStorage("criptos", portfolio);
+                    printInPortfolio(); 
+                    modalSell.style.display = "none";
+                    cripto = undefined;
+                    cantInputSell.value = '';
+                }
+            });
         });
     });
 }
@@ -329,3 +349,29 @@ function printLocalStorage(string){
         portfolioButtons(); 
     }
 }
+
+//  Modal | Boton de cierre
+let btnClose = d.getElementsByClassName("close-btn")[0],
+btnCloseModalBuy = d.getElementsByClassName("close-btn")[2],
+btnCloseModalSell = d.getElementsByClassName("close-btn")[3];
+
+
+const closeBtn = () => {
+    modalLogIn.style.display = "none";
+    criptoExist.style.display = "none";
+    modalBuy.style.display = "none";
+    modalSell.style.display = "none";
+}
+
+const outsideClick = (e) => {
+    if (e.target == modalLogIn || e.target == modalBuy || e.target == modalSell) {
+        modalLogIn.style.display = "none";
+        modalBuy.style.display = "none";
+        modalSell.style.display = "none";
+    }
+}
+
+btnClose.addEventListener('click', closeBtn);
+btnCloseModalBuy.addEventListener('click', closeBtn);
+btnCloseModalSell.addEventListener('click', closeBtn);
+window.addEventListener('click', outsideClick);

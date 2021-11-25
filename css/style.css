@@ -41,6 +41,18 @@
       body .container-modallogin .form-login input {
         background: #010b13;
         color: white; }
+    body .container-modalbuy .form-buy {
+      background: #010b13;
+      color: white; }
+      body .container-modalbuy .form-buy input {
+        background: #010b13;
+        color: white; }
+    body .container-modalsell .form-sell {
+      background: #010b13;
+      color: white; }
+      body .container-modalsell .form-sell input {
+        background: #010b13;
+        color: white; }
     body .container-criptoexist {
       background: #010b13; } }
 
@@ -226,8 +238,6 @@
       font-size: 18px;
       margin: 0;
       padding-top: 12px; }
-    .container-modallogin .form-login hr {
-      margin: 0 0 10px 0; }
     .container-modallogin .form-login input {
       width: 100%;
       padding: 5px;
@@ -269,6 +279,112 @@
   .container-criptoexist p {
     padding-top: 12px;
     width: 290px; }
+
+.container-modalbuy {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); }
+  .container-modalbuy .close-btn {
+    color: #ccc;
+    float: right;
+    font-size: 30px; }
+    .container-modalbuy .close-btn:hover, .container-modalbuy .close-btn:focus {
+      color: black; }
+  .container-modalbuy .form-buy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 20% auto;
+    padding: 10px;
+    width: 300px;
+    background: white;
+    border-radius: 5px; }
+    .container-modalbuy .form-buy p {
+      font-size: 18px;
+      margin: 0;
+      padding-top: 12px; }
+    .container-modalbuy .form-buy input {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+      outline: none;
+      border: 1px solid black; }
+    .container-modalbuy .form-buy .container-submit {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .container-modalbuy .form-buy .container-submit input[type="submit"] {
+        background: #2c6c87;
+        outline: none;
+        border: none;
+        font-size: 18px;
+        padding: 3px;
+        margin: 5px;
+        background: #90EE90;
+        width: 40%; }
+        .container-modalbuy .form-buy .container-submit input[type="submit"]:hover {
+          background: #235a71; }
+        .container-modalbuy .form-buy .container-submit input[type="submit"]:hover {
+          background: #2E8B57; }
+
+.container-modalsell {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); }
+  .container-modalsell .close-btn {
+    color: #ccc;
+    float: right;
+    font-size: 30px; }
+    .container-modalsell .close-btn:hover, .container-modalsell .close-btn:focus {
+      color: black; }
+  .container-modalsell .form-sell {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 20% auto;
+    padding: 10px;
+    width: 300px;
+    background: white;
+    border-radius: 5px; }
+    .container-modalsell .form-sell p {
+      font-size: 18px;
+      margin: 0;
+      padding-top: 12px; }
+    .container-modalsell .form-sell input {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+      outline: none;
+      border: 1px solid black; }
+    .container-modalsell .form-sell .container-submit {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .container-modalsell .form-sell .container-submit input[type="submit"] {
+        background: #2c6c87;
+        outline: none;
+        border: none;
+        font-size: 18px;
+        padding: 3px;
+        margin: 5px;
+        background: #CD5C5C;
+        width: 40%; }
+        .container-modalsell .form-sell .container-submit input[type="submit"]:hover {
+          background: #235a71; }
+        .container-modalsell .form-sell .container-submit input[type="submit"]:hover {
+          background: #B22222; }
 
 * {
   padding: 0;

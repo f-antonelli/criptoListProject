@@ -54,6 +54,26 @@
                 }
             }
         }
+        .container-modalbuy{
+            .form-buy{
+                background: $black-knight;
+                color: white;
+                input{
+                    background: $black-knight;
+                    color: white;
+                }
+            }
+        }
+        .container-modalsell{
+            .form-sell{
+                background: $black-knight;
+                color: white;
+                input{
+                    background: $black-knight;
+                    color: white;
+                }
+            }
+        }
         .container-criptoexist{
             background: $black-knight;
         }
