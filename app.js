@@ -141,7 +141,7 @@ formSubmit.addEventListener('submit', e => {
 
     modalLogIn.style.display = "none";
     btnLogIn.style.display = "none";
-    msgLogIn.innerHTML += `Bienvenido, ${nameText.value}`;
+    msgLogIn.innerHTML += `Bienvenidx, ${nameText.value}`;
 
     localStorage.setItem('user', msgLogIn.innerHTML);
 });
@@ -151,6 +151,7 @@ let btnClose = d.getElementsByClassName("close-btn")[0];
 
 const closeBtn = () => {
     modalLogIn.style.display = "none";
+    criptoExist.style.display = "none";
 }
 
 const outsideClick = (e) => {
@@ -159,13 +160,16 @@ const outsideClick = (e) => {
     }
 }
 
-btnClose.addEventListener("click", closeBtn);
-window.addEventListener("click", outsideClick);
+btnClose.addEventListener('click', closeBtn);
+
+window.addEventListener('click', outsideClick);
 
 //  Almacenar criptos en Portfolio
 let portfolio = {};
 
 //  Tomando botones para agregar al Portofolio
+const criptoExist = d.getElementById('criptoExist');
+
 const takeButtons = (data) => {
     const buttons = d.querySelectorAll('th button');
     
@@ -173,9 +177,13 @@ const takeButtons = (data) => {
         btn.addEventListener('click', () => {
             const cripto = data.find(e => e.id === Number(btn.dataset.id));
             cripto.cantidad = 0; // Agrego atributo cantidad
+            cripto.total = 0; // Agrego atributo total
+
 
             if (portfolio.hasOwnProperty(cripto.id)){
-                console.log('ya existe') // TO DO: Agregar modal con setTimeout
+                criptoExist.style.display = "block";
+                criptoExist.addEventListener('click', closeBtn);
+                setTimeout(() => {criptoExist.style.display = "none"}, 2000);
             } else {
                 portfolio[cripto.id] = { ...cripto } // spread operator para empujar todo el contenido del objeto
                 console.log(portfolio)
@@ -200,6 +208,7 @@ const printInPortfolio = () => {
         template.querySelector('th').textContent = cripto.nombre.toUpperCase();
         template.querySelectorAll('td')[0].textContent = '$ ' + cripto.precio;
         template.querySelectorAll('td')[1].textContent = '$ ' + cripto.cantidad;
+        template.querySelectorAll('td')[2].textContent = '$ ' + (cripto.cantidad * cripto.precio).toFixed(2);
         template.querySelectorAll('button')[0].dataset.id = cripto.id;
         template.querySelectorAll('button')[1].dataset.id = cripto.id;
 
@@ -228,6 +237,7 @@ const portfolioButtons = () => {
     addButton.forEach(btn => {
         btn.addEventListener('click', () => {
             const cripto = portfolio[btn.dataset.id];
+            cripto.total = (cripto.cantidad * cripto.precio).toFixed(2);
             cripto.cantidad++;
             portfolio[btn.dataset.id] = {...cripto};
             localStorage.removeItem('criptos');
@@ -239,6 +249,7 @@ const portfolioButtons = () => {
     delButton.forEach(btn => {
         btn.addEventListener('click', () => {
             const cripto = portfolio[btn.dataset.id];
+            cripto.total = (cripto.cantidad * cripto.precio).toFixed(2);
             cripto.cantidad--;
             localStorage.removeItem('criptos');
             saveCriptoInLocalStorage("criptos", portfolio);
@@ -297,6 +308,7 @@ function printLocalStorage(string){
             template.querySelector('th').textContent = cripto.nombre.toUpperCase();
             template.querySelectorAll('td')[0].textContent = '$ ' + cripto.precio;
             template.querySelectorAll('td')[1].textContent = '$ ' + cripto.cantidad;
+            template.querySelectorAll('td')[2].textContent = '$ ' + (cripto.cantidad * cripto.precio).toFixed(2);
             template.querySelectorAll('button')[0].dataset.id = cripto.id;
             template.querySelectorAll('button')[1].dataset.id = cripto.id;
     

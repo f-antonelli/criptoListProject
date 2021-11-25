@@ -40,7 +40,9 @@
       color: white; }
       body .container-modallogin .form-login input {
         background: #010b13;
-        color: white; } }
+        color: white; }
+    body .container-criptoexist {
+      background: #010b13; } }
 
 @media (max-width: 780px) {
   .container-footer .container-textfooter {
@@ -246,6 +248,27 @@
         width: 40%; }
         .container-modallogin .form-login .container-submit input[type="submit"]:hover {
           background: #235a71; }
+
+.container-criptoexist {
+  display: none;
+  position: sticky;
+  bottom: 5px;
+  left: 10px;
+  width: 300px;
+  height: 40px;
+  background: white;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 0 8px; }
+  .container-criptoexist .close-btn {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    height: 25px; }
+    .container-criptoexist .close-btn:hover, .container-criptoexist .close-btn:focus {
+      color: black; }
+  .container-criptoexist p {
+    padding-top: 12px;
+    width: 290px; }
 
 * {
   padding: 0;

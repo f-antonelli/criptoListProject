@@ -34,18 +34,6 @@
         </div>
     </nav>
 
-    <!--Modal log in-->
-    <div class="container-modallogin">
-        <form id="form" class="form-login" data-dark>
-            <span class="close-btn">&times;</span>
-            <p>Log in</p>
-            <input type="text" id="name" placeholder="Ingrese nombre de usuario" data-dark>
-            <div class="container-submit">
-                <input type="submit" id="submit-login" value="Enviar">
-            </div>
-        </form>
-    </div>
-
     <!--Tabla principal criptos-->
     <section class="container-table">
         <table class="table" data-dark>
@@ -74,6 +62,7 @@
                     <th scope="col">Moneda</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
+                    <th scope="col">Total</th>
                     <th scope="col">#</th>
                 </tr>
             </thead>
@@ -114,6 +103,24 @@
         </div>
     </footer>
 
+        <!--Modal | log in-->
+        <div class="container-modallogin">
+            <form id="form" class="form-login" data-dark>
+                <span class="close-btn">&times;</span>
+                <p>Log in</p>
+                <input type="text" id="name" placeholder="Ingrese nombre de usuario" data-dark>
+                <div class="container-submit">
+                    <input type="submit" id="submit-login" value="Enviar">
+                </div>
+            </form>
+        </div>
+
+        <div class="container-criptoexist" id="criptoExist" data-dark>
+            <span class="close-btn">&times;</span>
+            <p>La cripto ya existe en el portfolio.
+            </p>
+        </div>
+
         <!--Template | Tabla principal criptos-->
         <template id="templateCriptos">
             <tr>
@@ -130,6 +137,7 @@
         <template id="templatePortfolio">
             <tr>
                 <th scope="row"></th>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td>
