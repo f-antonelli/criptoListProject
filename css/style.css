@@ -386,6 +386,50 @@
         .container-modalsell .form-sell .container-submit input[type="submit"]:hover {
           background: #B22222; }
 
+.container__card {
+  display: flex;
+  width: 70%;
+  height: 380px;
+  background: #010b13;
+  margin: 200px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 5px 22px 36px -20px rgba(0, 0, 0, 0.75); }
+  .container__card .container__faq {
+    flex: 50%;
+    padding: 30px 60px 30px 20px; }
+    .container__card .container__faq h2 {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 25px; }
+    .container__card .container__faq .faq {
+      border-bottom: 1px solid #e7e7e9;
+      margin-bottom: 5px; }
+      .container__card .container__faq .faq .faq-question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 13px;
+        margin: 10px 0 15px 0;
+        cursor: pointer; }
+        .container__card .container__faq .faq .faq-question img {
+          width: 10px;
+          height: 7px;
+          transition: all 0.2s ease-in; }
+      .container__card .container__faq .faq .faq-answer {
+        display: none; }
+    .container__card .container__faq .faq.active .faq-question p {
+      font-weight: 700; }
+    .container__card .container__faq .faq.active .faq-question img {
+      transform: rotate(180deg);
+      transition: all 0.2s ease-in; }
+    .container__card .container__faq .faq.active .faq-answer {
+      display: block;
+      font-weight: 400;
+      font-size: 13px;
+      color: #787887;
+      margin: 0 0 10px 0; }
+
 * {
   padding: 0;
   margin: 0;
