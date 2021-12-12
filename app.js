@@ -132,6 +132,7 @@ if (userConfig !== null){
     }
 
 btnLogIn.addEventListener('click', () => {
+    $('.container-modallogin').fadeIn(1000);
     modalLogIn.style.display = "flex";
 
 });
@@ -197,6 +198,7 @@ const printInPortfolio = () => {
         const clone = template.cloneNode(true); 
         fragment.appendChild(clone);
     });
+
     containerPortfolio.appendChild(fragment);
 
     //  Borrar contenido del footer cuando hay elementos
